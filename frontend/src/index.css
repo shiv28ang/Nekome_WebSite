@@ -98,6 +98,10 @@ html{
     @apply mx-auto max-w-[1440px] px-6 lg:px-12;
   }
 
+  .max-padd-container1 {
+    @apply mx-auto max-w-[1920px] px-6 lg:px-12;
+  }
+
   .flexCenter {
     @apply flex items-center justify-center;
   }

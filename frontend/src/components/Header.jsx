@@ -45,7 +45,7 @@ const Header = () => {
                 className="md:hidden cursor-pointer hover:text-secondary text-2xl"
               />
             )}
-            <div className="flexBetween gap-x-2 sm :">
+            <div className="flexBetween gap-x-2 sm : gap-x-5">
               <Link className="flex">
                 <FaBasketShopping className="text-[22px]"/>
                 <span className="relative flexcenter w-2 h-2 rounded-full bg-secondary text-white medium-14 -top-1"></span>
