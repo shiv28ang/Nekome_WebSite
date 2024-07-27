@@ -43,15 +43,15 @@ html{
 }
 @layer base {
   
-  /* .active-link{
+  .active-link{
     @apply text-secondary ;
-  } */
+  }
   .active-color {
     @apply relative after:w-full after:h-[2px] after:bg-black after:absolute after:-bottom-1 after:right-0 after:left-0
   }
-  .active-link{
+  /* .active-link{
     @apply text-secondary relative flex-1 after:w-full after:h-[1px] after:bg-secondary after:absolute after:-bottom-3 after:right-0;
-  }
+  } */
   .active-ctg{
     @apply border-8 border-solid border-black p-1 ;
   }
