@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Hero = () => {
   return (
     <section
-      className='gap-y-1 max-padd-container1 bg-hero bg-cover bg-center bg-no-repeat h-[744px] w-full '
+      className='gap-y-1 max-padd-container bg-hero bg-cover bg-center bg-no-repeat h-[744px] w-full '
       id="home"
     >
       <div className='relative top-24 xs:top-72'>

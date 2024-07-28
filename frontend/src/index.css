@@ -99,7 +99,7 @@ html{
   }
 
   .max-padd-container1 {
-    @apply mx-auto max-w-[1920px] px-6 lg:px-12;
+    @apply px-6 lg:px-12;
   }
 
   .flexCenter {
