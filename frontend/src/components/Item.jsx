@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaMinus, FaPlus, FaUpRightAndDownLeftFromCenter } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 
 const Item = ({product}) => {
-
+    const {cartItems,addToCart,removeFromCart}=useContext(ShopContext)
     const [itemCount,setItemCount]=useState(0)
   return (
     <div className='shadow-sm'>
@@ -15,15 +16,15 @@ const Item = ({product}) => {
             cursor-pointer transition-all duration-500'>
             <FaUpRightAndDownLeftFromCenter/>
             </Link>
-            {!itemCount ? (
-                <FaPlus onClick={()=>setItemCount(prev=>prev+1)}
+            {!cartItems[product._id] ? (
+                <FaPlus onClick={()=>addToCart(product._id)}
                 className="bg-white h-8 w-8 p-2 rounded-full shadow-inner cursor-pointer"/>
             ) : ( 
-            <div className='bg-white rounded-full flexCenter gap-2' >
-                <FaMinus onClick={()=>setItemCount(prev=>prev-1)}
-                className='rounded-full h-8 w-8 p-2 cursor-pointer'/>
-                <p>{itemCount}</p>
-                <FaPlus onClick={()=>setItemCount(prev=>prev+1)}
+            <div className='bg-white rounded-full flexCenter gap-2 h-8' >
+                <FaMinus onClick={()=>removeFromCart(product._id)}
+                className='rounded-full bg-primary h-6 w-6 p-1 ml-1 cursor-pointer'/>
+                <p>{cartItems[product._id]}</p>
+                <FaPlus onClick={()=>addToCart(product._id)}
                 className='rounded-full bg-secondary h-6 w-6 p-1 mr-1 cursor-pointer'/>
             </div>
         )}
