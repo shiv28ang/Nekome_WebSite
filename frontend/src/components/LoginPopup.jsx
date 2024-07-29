@@ -12,7 +12,7 @@ const LoginPopup = ({setShowLogin}) => {
                 className='medium-20 text-slate-900/70 cursor-pointer'/>
             </div>
             <div className='flex flex-col gap-4 my-6'>
-            <input type='text' placeholder='Name' required className="border border-gray p-2 pl-4 rounded-md outline-none"/>
+            {state==="Sign Up" && (<input type='text' placeholder='Name' required className="border border-gray p-2 pl-4 rounded-md outline-none"/>)}
             <input type='email' placeholder='E-mail' required className="border border-gray/20 p-2 pl-4 rounded-md outline-none"/>
             <input type='password' placeholder='Password' required className="border border-gray p-2 pl-4 rounded-md outline-none"/>
             </div>
@@ -29,12 +29,14 @@ const LoginPopup = ({setShowLogin}) => {
             {state==="Sign Up" ?(
                 <p>
                     Already have an account?{" "} 
-                    <span onClick={()=>setState("Loginn")}>Login</span>
+                    <span onClick={()=>setState("Log In")} 
+                    className='cursor-pointer text-secondary'>Login</span>
                 </p>
             ):(
                 <p>
                 Don't have an account?{" "} 
-                <span onClick={()=>setState("Sign Up")}>Sign-Up</span>
+                <span onClick={()=>setState("Sign Up")}
+                className='cursor-pointer text-secondary'>Sign-Up</span>
             </p>
             )}
             </form>

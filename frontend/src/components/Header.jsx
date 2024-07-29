@@ -112,7 +112,7 @@ const Header = ({setShowLogin}) => {
               />
             )}
             <div className="flexBetween gap-x-2 sm:gap-x-5">
-              <Link className="flex">
+              <Link to={'/cart'} className="flex">
                 <FaBasketShopping className="text-[22px]" />
                 {totalItems > 0 && (
                   <span className="relative flexCenter w-4 h-4 rounded-full bg-secondary text-white medium-14 -top-1 -right-2">
