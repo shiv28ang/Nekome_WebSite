@@ -49,6 +49,7 @@ import Header from "./components/Header";
 import LoginPopup from './components/LoginPopup';
 import Cart from './pages/Cart';
 import Home from "./pages/Home";
+import Order from './pages/Order';
 import Product from "./pages/Product";
 
 function App() {
@@ -64,8 +65,8 @@ function App() {
           <Route path=":productId" element={<Product />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
-        {/*<Route path="/order" element={<Order />} />
-        <Route path="/verify" element={<Verify />} />
+        <Route path="/order" element={<Order />} />
+        {/*<Route path="/verify" element={<Verify />} />
         <Route path="/myorders" element={<MyOrders />} /> */}
       </Routes>
     </BrowserRouter>

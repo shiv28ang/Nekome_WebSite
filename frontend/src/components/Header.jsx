@@ -61,6 +61,8 @@
 // };
 
 // export default Header;
+
+
 import React, { useContext, useState } from "react";
 import { FaBasketShopping } from "react-icons/fa6";
 import { MdClose, MdMenu } from "react-icons/md";
@@ -76,7 +78,7 @@ const Header = ({setShowLogin}) => {
   const totalItems = Object.values(cartItems).reduce((acc, count) => acc + count, 0);
 
   return (
-    <header className="fixed right-0 left-0 mx-auto z-10">
+    <header className="fixed right-0 left-0 mx-auto z-10 h-20">
       <div className="max-padd-container bg-white">
         <div className="flexBetween py-4 max-xs:px-2">
           <div className="flexCenter gap-x-20">
