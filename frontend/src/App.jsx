@@ -43,15 +43,18 @@
 // }
 
 //  export default App;
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
+import LoginPopup from './components/LoginPopup';
 import Home from "./pages/Home";
 
 function App() {
+  const [showLogin,setShowLogin]=useState(false);
   return (
     <BrowserRouter>
-      <Header /> 
+    {showLogin ? <LoginPopup setShowLogin={setShowLogin}/>:<></>}
+      <Header setShowLogin={setShowLogin} /> 
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/product">

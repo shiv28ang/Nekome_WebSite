@@ -69,7 +69,7 @@ import logo from "../assets/nekomelogo.png";
 import { ShopContext } from "../context/ShopContext";
 import Navbar from "./Navbar";
 
-const Header = () => {
+const Header = ({setShowLogin}) => {
   const [menuOpened, setMenuOpened] = useState(false);
   const toggleMenu = () => setMenuOpened(!menuOpened);
   const { cartItems } = useContext(ShopContext);
@@ -120,7 +120,8 @@ const Header = () => {
                   </span>
                 )}
               </Link>
-              <button className="btn-outline rounded-full ml-4">LogIn</button>
+              <button onClick={()=>setShowLogin(true)}
+              className="btn-outline rounded-full ml-4">LogIn</button>
             </div>
           </div>
         </div>
