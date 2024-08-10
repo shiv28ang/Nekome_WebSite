@@ -1,3 +1,4 @@
+import fs from "fs";
 import productModel from "../models/productModel.js";
 
 const addProduct = async(req, res) => {
@@ -23,6 +24,7 @@ const addProduct = async(req, res) => {
   }
 };
 
+//product listinhg
 const listProduct =async(req,res)=>{
     try{
       const products = await productModel.find({})
@@ -36,7 +38,7 @@ const listProduct =async(req,res)=>{
 }
 
 //remove product
-const removeProduct =async (req,res)=>{
+const removeproduct =async (req,res)=>{
 try {
   const product =await productModel.findById(req.body.id)
   fs.unlink(`upload/${product.image}`,()=>{})
@@ -49,5 +51,5 @@ try {
 }
 }
 
-export { addProduct, listProduct, removeProduct };
+export { addProduct, listProduct, removeproduct };
 
