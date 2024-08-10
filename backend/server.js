@@ -1,22 +1,28 @@
-import cors from "cors"
-import express from "express"
+import cors from "cors";
+import express from 'express';
+import { connectDB } from './config/db.js';
+import productRouter from './routes/productRoute.js';
 
 //app config
-const app=express()
-const port=4000
+const app = express();
+const PORT = 4000;
 
 //middleware
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-app.get('/',(req,res)=>{
-    res.send("API is working")
-})
+connectDB();
 
-app.listen(port,()=>{
-    console.log(`Server is running on http://localhost:${port}`)
-})
+// API endpoints
+app.use("/api/product", productRouter);
+app.use("/images", express.static('uploads'));
 
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
 
-// useful String
-//mongodb+srv://21ucs192:<password>@cluster0.um2rnbl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+//mongodb+srv://21ucs192:<password>@cluster0.logyw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
