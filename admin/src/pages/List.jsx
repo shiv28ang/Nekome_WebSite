@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { TbTrash } from "react-icons/tb";
 import { toast } from 'react-toastify';
 
-const List = () => {
-const url="http://localhost:4000"
+const List = ({url}) => {
+
 const[list,setList]=useState([])
 
 const fetchList=async()=>{
     const response =await axios.get(`${url}/api/product/list`)
-    console.log(response.data)
+    //console.log(response.data)
     if(response.data.success)
     {
         setList(response.data.data);

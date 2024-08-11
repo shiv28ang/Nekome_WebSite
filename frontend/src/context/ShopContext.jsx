@@ -5,6 +5,8 @@ export const ShopContext = createContext(null)
 
 const ShopContextProvider= (props) => {
     const[cartItems,setCartItems]=useState({})
+    const url="http://localhost:4000"
+
     const addToCart=(itemId)=>{
         if(!cartItems[itemId])
         {
