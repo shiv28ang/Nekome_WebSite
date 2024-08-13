@@ -1,15 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { FaMinus, FaPlus, FaUpRightAndDownLeftFromCenter } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 
 const Item = ({product}) => {
-    const {cartItems,addToCart,removeFromCart}=useContext(ShopContext)
-    const [itemCount,setItemCount]=useState(0)
+    const {cartItems,addToCart,removeFromCart,url}=useContext(ShopContext)
+   // const [itemCount,setItemCount]=useState(0)
   return (
     <div className='shadow-sm'>
       <div className='relative group'>
-        <img src={product.image} alt="" className='rounded-tl-2xl rounded-br-2xl'/>
+        <img src={url+"/images/"+product.image} alt="" className='rounded-tl-2xl rounded-br-2xl '/>
         <div className='absolute right-3 bottom-3 flexCenter gap-x-2'>
             <Link to={`/product/${product._id}`}
             className='bg-white h-8 w-8 p-2 rounded-full shadow-inner
