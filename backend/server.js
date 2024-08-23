@@ -6,6 +6,7 @@ import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import productRouter from './routes/productRoute.js';
 import userRouter from "./routes/userRoute.js";
+//import { app1 } from "./App1.js";
 //import userController from '../controllers/userController.js';
 
 
